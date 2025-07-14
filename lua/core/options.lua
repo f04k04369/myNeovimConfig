@@ -28,3 +28,4 @@ opt.backup = false
 
 -- クリップボードへのヤンク
 opt.clipboard = "unnamedplus"
+
