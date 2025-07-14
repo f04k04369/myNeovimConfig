@@ -25,3 +25,6 @@ opt.scrolloff = 8
 opt.undofile = true
 opt.swapfile = false
 opt.backup = false
+
+-- クリップボードへのヤンク
+opt.clipboard = "unnamedplus"
