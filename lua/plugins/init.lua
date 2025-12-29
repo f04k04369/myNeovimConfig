@@ -18,6 +18,11 @@ require("lazy").setup({
     config = true, -- lua/plugins/flutter-tools.lua を読み込む
   },
 
+  -- 新機能のインポート
+  { import = "plugins.efficiency" },
+  { import = "plugins.ui_enhancements" },
+  { import = "plugins.formatting" },
+
   -- UI系
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, config = true },
   { "nvim-lualine/lualine.nvim", config = true },

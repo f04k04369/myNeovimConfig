@@ -352,3 +352,43 @@ lazy.nvimが自動的に起動し、足りないプラグインをすべてイ�
 ---
 
 > このREADMEをコピーして `README.md` として保存すれば、誰でも同じ環境を再現できます。
+
+---
+
+## ⚡️ 追加機能の使い方
+
+### ⌨️ 入力効率化 (Input Efficiency)
+
+- **自動括弧閉じ (nvim-autopairs)**
+  - `(` や `"` などを入力すると、自動で閉じ括弧が入力されます。
+
+- **囲み文字操作 (nvim-surround)**
+  - `ys<motion><char>`: 囲み文字を追加 (例: `ysiw"` で単語を `"` で囲む)
+  - `ds<char>`: 囲み文字を削除 (例: `ds"` で `"` を削除)
+  - `cs<char_old><char_new>`: 囲み文字を変更 (例: `cs"'` で `"` を `'` に変更)
+
+- **高速ジャンプ (flash.nvim)**
+  - `s`: 画面内の検索モードを起動。2文字入力すると、ジャンプ先のラベルが表示されます。表示されたキーを押すとその位置にジャンプします。
+
+### 🎨 UI改善 (UI Enhancements)
+
+- **Git状態表示 (gitsigns.nvim)**
+  - 行番号の左側に、Gitの追加(+)・変更(~)・削除(-)の状態が色付きで表示されます。
+
+- **バッファタブ (bufferline.nvim)**
+  - 画面上部に、現在開いているファイル（バッファ）がタブのように表示されます。
+
+- **リッチな通知 (noice.nvim)**
+  - コマンドラインが画面中央にフロート表示され、通知も右上にリッチなUIで表示されます。
+
+### 🧹 自動フォーマット (Formatting)
+
+- **conform.nvim**
+  - ファイル保存時に自動的にフォーマットが実行されます。
+  - 対応言語: JavaScript, TypeScript, React, CSS, HTML, JSON, Markdown (Prettierを使用)
+
+### ⚛️ Next.js / React 開発
+
+- **LSPサポート**
+  - `.tsx` や `.ts` ファイルを開くと、`ts_ls` (TypeScript) と `eslint` が自動的に起動します。
+  - Tailwind CSSを使用している場合、`tailwindcss` サーバーも起動し、クラス名の補完が効きます。

@@ -25,7 +25,7 @@ return {
 
     -- mason-lspconfigを使って、dartls "以外" のLSPを自動セットアップ
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" }, -- dartls以外のLSPをここに追加
+      ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "eslint", "cssls" }, -- dartls以外のLSPをここに追加
       handlers = {
         -- デフォルトのハンドラ（dartls以外はこれを使う）
         function(server_name)
