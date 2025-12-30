@@ -2,7 +2,16 @@ return {
   -- Gitの状態を表示
   {
     "lewis6991/gitsigns.nvim",
-    config = true
+    opts = {
+      signs = {
+        add = { text = "A" },
+        change = { text = "M" },
+        delete = { text = "D" },
+        topdelete = { text = "D" },
+        changedelete = { text = "M" },
+        untracked = { text = "U" },
+      },
+    },
   },
 
   -- タブバーのようなバッファライン

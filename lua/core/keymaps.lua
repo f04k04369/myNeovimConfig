@@ -13,3 +13,6 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
 
 -- NvimTree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })
+
+-- Insert mode
+map("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })

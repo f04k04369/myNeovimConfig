@@ -22,9 +22,16 @@ require("lazy").setup({
   { import = "plugins.efficiency" },
   { import = "plugins.ui_enhancements" },
   { import = "plugins.formatting" },
+  { import = "plugins.theme" },
 
   -- UI系
-  { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, config = true },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("plugins.nvim-tree")
+    end,
+  },
   { "nvim-lualine/lualine.nvim", config = true },
   { "folke/tokyonight.nvim", lazy = false, priority = 1000, config = true },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
