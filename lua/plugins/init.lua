@@ -54,6 +54,40 @@ require("lazy").setup({
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
   { "numToStr/Comment.nvim", opts = {} },
+
+  -- 括弧の自動補完
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      local autopairs = require("nvim-autopairs")
+      autopairs.setup({
+        check_ts = true, -- treesitterと連携
+        ts_config = {
+          lua = { "string" }, -- luaでは文字列内で補完しない
+          javascript = { "template_string" },
+        },
+        disable_filetype = { "TelescopePrompt" },
+        fast_wrap = {
+          map = "<M-e>", -- Alt+eでfast wrapを使用
+          chars = { "{", "[", "(", '"', "'" },
+          pattern = [=[[%'%"%)%>%]%)%}%,]]=],
+          end_key = "$",
+          keys = "qwertyuiopzxcvbnmasdfghjkl",
+          check_comma = true,
+          highlight = "Search",
+          highlight_grey = "Comment",
+        },
+      })
+
+      -- nvim-cmpとの連携
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      local cmp_ok, cmp = pcall(require, "cmp")
+      if cmp_ok then
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+      end
+    end,
+  },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
