@@ -342,7 +342,7 @@ nvim
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | 自動補完 |
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip) | スニペットエンジン |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | VSCode互換スニペット |
-| [nvim-autopairs](https://github.com/windwp/nvim-autopairs) | 括弧自動補完 |
+| [nvim-autopairs](https://github.com/windwp/nvim-autopairs) | 括弧自動補完 (`()`, `[]`, `{}`, `""`, `''`, `<>`) |
 | [nvim-surround](https://github.com/kylechui/nvim-surround) | 囲み文字操作 |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | 構文解析 |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | ファジーファインダー |

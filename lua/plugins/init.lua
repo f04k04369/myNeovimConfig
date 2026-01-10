@@ -70,7 +70,7 @@ require("lazy").setup({
         disable_filetype = { "TelescopePrompt" },
         fast_wrap = {
           map = "<M-e>", -- Alt+eでfast wrapを使用
-          chars = { "{", "[", "(", '"', "'" },
+          chars = { "{", "[", "(", '"', "'", "<" },
           pattern = [=[[%'%"%)%>%]%)%}%,]]=],
           end_key = "$",
           keys = "qwertyuiopzxcvbnmasdfghjkl",
@@ -78,6 +78,12 @@ require("lazy").setup({
           highlight = "Search",
           highlight_grey = "Comment",
         },
+      })
+
+      -- < > ペアのルールを追加
+      local Rule = require("nvim-autopairs.rule")
+      autopairs.add_rules({
+        Rule("<", ">"),
       })
 
       -- nvim-cmpとの連携
