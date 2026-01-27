@@ -3,6 +3,13 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+-- Load snippets from friendly-snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+
+-- ReactファイルでHTMLスニペットを有効化
+luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.filetype_extend("javascriptreact", { "html" })
+
 cmp.setup({
   snippet = {
     expand = function(args)

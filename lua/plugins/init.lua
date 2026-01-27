@@ -45,7 +45,18 @@ require("lazy").setup({
     end,
   },
   { "williamboman/mason-lspconfig.nvim" },
-  { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" }, config = true }, -- lua/plugins/cmp.lua を読み込む
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets", -- Snippets collection
+    },
+    config = function()
+      require("plugins.cmp")
+    end,
+  },
 
   -- 構文解析
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = true },

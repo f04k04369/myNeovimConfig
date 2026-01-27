@@ -25,7 +25,7 @@ return {
 
     -- mason-lspconfigを使って、dartls "以外" のLSPを自動セットアップ
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "eslint", "cssls" }, -- dartls以外のLSPをここに追加
+      ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "eslint", "cssls", "emmet_ls" }, -- dartls以外のLSPをここに追加
       handlers = {
         -- デフォルトのハンドラ（dartls以外はこれを使う）
         function(server_name)
@@ -36,6 +36,23 @@ return {
         end,
         -- dartlsは手動で設定するので、ここでは何もしない
         ["dartls"] = function() end,
+
+        -- emmet_lsの設定 (HTMLタグ補完)
+        ["emmet_ls"] = function()
+          require("lspconfig").emmet_ls.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+            init_options = {
+              html = {
+                options = {
+                  -- 必要に応じてEmmetのオプションを追加可能
+                  ["bem.enabled"] = true,
+                },
+              },
+            },
+          })
+        end,
       },
     })
 
