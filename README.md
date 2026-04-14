@@ -1,3 +1,7 @@
+---
+updated: 2026-04-14 11:58
+---
+
 # 🚀 My Neovim Configuration
 
 モダンでパワフルなNeovim開発環境です。**Flutter**、**Next.js/React**、**TypeScript**などの開発に最適化されています。
@@ -90,7 +94,7 @@ git clone https://github.com/YOUR_USERNAME/nvim.git ~/.config/nvim
 nvim
 ```
 
-初回起動時に **lazy.nvim** が自動的にプラグインをインストールします。
+初回起動時に **lazy.nvim** が自動的にプラグインをインストール。
 
 ### 4. LSPサーバーのインストール
 
